@@ -9,7 +9,9 @@ exports.seed = function(knex) {
           VIN: 123234456,
           make: 'Nissan',
           model: 'Maxima',
-          mileage: 12345
+          mileage: 12345,
+          transType: 'Automatic',
+          titleStatus: 'R'
         }
       ]);
     });

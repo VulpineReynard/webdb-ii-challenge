@@ -6,7 +6,13 @@ const router = express.Router();
 
 router.route("/")
 .get(function rootGetController(req, res) {
-  res.status(200).json({ message: "Good to go."})
+  db('cars')
+    .then(cars => {
+      res.json(cars);
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Failed to retrieve cars.' })
+    })
 })
 
 module.exports = router;
